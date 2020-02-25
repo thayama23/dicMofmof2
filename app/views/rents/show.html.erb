@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<h1>かんらん</h1>
+<br>
+<p>
+  <strong>物件名:</strong>
+  <%= @rent.name %>
+</p>
+
+<p>
+  <strong>賃料:</strong>
+  <%= @rent.price %>円
+</p>
+
+<p>
+  <strong>住所:</strong>
+  <%= @rent.address %>
+</p>
+
+<p>
+  <strong>築年数:</strong>
+  <%= @rent.age %>年
+</p>
+
+<p>
+  <strong>備考:</strong>
+  <%= @rent.misc %>
+</p>
+
+<hr>
+
+<tbody>
+  <% @stations.each do |station| %>
+    <tr>
+      
+      <td><%= station.line %></td>
+    </tr>
+    <tr>
+      <td><%= station.name %></td>
+    </tr>
+    <tr>
+      <td><%= station.distance %></td>分
+    </tr>
+  <% end %>
+</tbody>
+
+<%= link_to '編集', edit_rent_path(@rent) %> |
+<%= link_to '戻る', rents_path %>
