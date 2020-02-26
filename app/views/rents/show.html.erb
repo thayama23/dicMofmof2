@@ -29,20 +29,30 @@
 
 <hr>
 
-<tbody>
-  <% @stations.each do |station| %>
-    <tr>
-      
-      <td><%= station.line %></td>
-    </tr>
-    <tr>
-      <td><%= station.name %></td>
-    </tr>
-    <tr>
-      <td><%= station.distance %></td>分
-    </tr>
-  <% end %>
-</tbody>
+
+<% n = 0 %>
+  <% @stations.each do |f| %>
+  <%= "最寄り駅#{n += 1}" %>
+
+  <div class="field">
+    <%= "路線名" %>
+    <%= f.line %>
+  </div>
+
+  <div class="field">
+    <%= "駅名" %>
+    <%= f.name %>
+  </div>
+
+  <div class="field">
+    <%= "徒歩数分" %>
+    <%= f.distance %>分
+  </div>
+<% end %>
+
+
+
+
 
 <%= link_to '編集', edit_rent_path(@rent) %> |
 <%= link_to '戻る', rents_path %>
